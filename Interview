@@ -1,30 +1,37 @@
+import java.util.Scanner;
 
 public class Interview {
-	public static void main(String args[]) {
-		String exp = "WATER";
-		int n = exp.length() / 2;
-		int i = 0;
 
-		for (i = n; i < exp.length(); i++) {
-			for (int j = n; j <= i; j++) {
-				System.out.print(exp.charAt(j));
+	public static void main(String args[]) {
+		
+		Scanner sc= new Scanner(System.in);
+		System.out.print("Enter a string\n");
+		String word ="";
+		String exp = sc.next();
+		int n = exp.length() / 2;
+		int middle = n;
+		for(int i =0;i<exp.length();i++) {
+			if(i<=n) {
+			middle =n;
+			word ="";
+			for(int space =i+1;space <= (exp.length()-1);space++)
+				System.out.print(" ");
+			for(int j =i;j>=0;j--) {	
+				System.out.print(exp.charAt(middle));
+				word+=exp.charAt(middle);
+				middle++;
 			}
 			System.out.println();
-		}
-
-		if (i >= exp.length()) {
-
-			for (int z = 0; z < (exp.length() - n) - 1; z++) {
-				for (i = n; i < exp.length(); i++) {
-					System.out.print(exp.charAt(i));
-				}
-				for (int k = 0; k <= z; k++)
-					System.out.print(exp.charAt(k));
-
-				System.out.println();
+			}else{
+				
+				for(int space =i+1;space <= (exp.length()-1);space++)
+					System.out.print(" ");
+					System.out.print(word);
+					for (int k = 0; k <= (i-(exp.length()-n)); k++)
+						System.out.print(exp.charAt(k));
+					System.out.println();
 			}
-
 		}
+}
 
-	}
 }
