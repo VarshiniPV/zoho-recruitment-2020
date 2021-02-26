@@ -1,0 +1,30 @@
+
+public class Interview {
+	public static void main(String args[]) {
+		String exp = "WATER";
+		int n = exp.length() / 2;
+		int i = 0;
+
+		for (i = n; i < exp.length(); i++) {
+			for (int j = n; j <= i; j++) {
+				System.out.print(exp.charAt(j));
+			}
+			System.out.println();
+		}
+
+		if (i >= exp.length()) {
+
+			for (int z = 0; z < (exp.length() - n) - 1; z++) {
+				for (i = n; i < exp.length(); i++) {
+					System.out.print(exp.charAt(i));
+				}
+				for (int k = 0; k <= z; k++)
+					System.out.print(exp.charAt(k));
+
+				System.out.println();
+			}
+
+		}
+
+	}
+}
